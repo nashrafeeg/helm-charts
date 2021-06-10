@@ -29,7 +29,7 @@ version_string: "anonymous"
 default_ttl: "1500"
 soa_minimum_ttl: "1200"
 default_soa_name: "ns1.external.local"
-apikey: foobarbaz
+apikey: QWERTY0987654321!@$%^&*
 
 metallb:
   address_pool: default
@@ -40,7 +40,7 @@ powerdns:
     repository: pschiffe/pdns-mysql
     tag: alpine
     pullPolicy: IfNotPresent
-  domain: external.local
+  domain: rancher.avmcloud.net
   master: "yes"
   api: "yes"
   webserver: "yes"
@@ -49,7 +49,7 @@ powerdns:
   version_string: "anonymous"
   default_ttl: "1500"
   soa_minimum_ttl: "1200"
-  default_soa_name: "ns1.external.local"
+  default_soa_name: "rdns.avmcloud.net"
   mysql_host: "127.0.0.1"
   mysql_database: "powerdns"
   mysql_user: "powerdns"
@@ -99,7 +99,7 @@ admin:
   mysql_database: "powerdns"
   mysql_user: "powerdns"
   ingress:
-    enabled: "false"
+    enabled: "true"
     class: "traefik"
     path: "/"
     hostname: "powerdns-admin"
@@ -109,7 +109,7 @@ admin:
   limits:
     memory: "512Mi"
     cpu: "300m"
-  secret: changeme
+  secret: QWERTY987654321
 
 nameOverride: ""
 fullnameOverride: ""
